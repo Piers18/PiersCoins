@@ -1,6 +1,5 @@
 import CoinContainer from "./components/CoinContainer";
 import CoinInfo from "./components/CoinInfo";
-import CoinTable from "./components/CoinTable";
 import Layout from "./components/Layout";
 import NotFoudPage from "./components/NotFoutPage";
 import WatchlistContainer from "./components/WatchlistContainer";

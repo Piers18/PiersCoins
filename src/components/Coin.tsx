@@ -14,7 +14,12 @@ const Coin = ({
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   const handleFavorites = () => {
+    const favorites: string[] = JSON.parse(localStorage.getItem("favorites") || "[]");
+    const newFavorites = isFavorite
+      ? favorites.filter((fav) => fav !== id)
+      : [...favorites, id];
     setIsFavorite(!isFavorite);
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
   const priceUp = price_change_24h >= 0;
