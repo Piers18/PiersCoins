@@ -4,7 +4,7 @@ import CoinTable from "./CoinTable";
 import CoinNotFound from "./CoinNotFound";
 import Loading from "./Loading";
 import ErroDataFeching from "./ErrorDataFeching";
-import { URL_API, URL_COINS } from "../constants/api.ts"
+import { URL_API, URL_COINS, COINGECKO_API_KEY } from "../constants/api.ts"
 
 const CoinContainer = () => {
   const [coinsList, setCoinsList] = useState<CoinInterface[]>([]);
@@ -17,8 +17,7 @@ const CoinContainer = () => {
 
   useEffect(() => {
     fetch(
-      `${URL_API}${URL_COINS}`,
-    )
+      `${URL_API}${URL_COINS}&x_dg_demo_api_key=${COINGECKO_API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
         setCoinsListOriginal(data);

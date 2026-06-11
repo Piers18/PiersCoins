@@ -4,21 +4,21 @@ import Coin from "./Coin";
 const CoinTable = ({ coinsList }: { coinsList: CoinInterface[] }) => {
   return (
     <table className="min-w-full divide-y divide-gray-200">
-      <thead className="bg-white">
+      <thead className="bg-gray-50 border-b border-gray-200">
         <tr>
-          <th className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider w-12">
             #
           </th>
-          <th className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-40">
+          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
             Name
           </th>
-          <th className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <th className="px-4 py-3 text-right text-xs font-semibold text-gray-400 uppercase tracking-wider">
             Price
           </th>
-          <th className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <th className="px-4 py-3 text-right text-xs font-semibold text-gray-400 uppercase tracking-wider">
             24h Change
           </th>
-          <th className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <th className="px-4 py-3 text-center text-xs font-semibold text-gray-400 uppercase tracking-wider">
             Favorite
           </th>
         </tr>
@@ -27,7 +27,8 @@ const CoinTable = ({ coinsList }: { coinsList: CoinInterface[] }) => {
         {coinsList.map((coin, index) => (
           <Coin
             key={coin.id}
-            id={index + 1}
+            rank={index + 1}
+            id={coin.id}
             image={coin.image}
             name={coin.name}
             symbol={coin.symbol}
