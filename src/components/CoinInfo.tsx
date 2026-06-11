@@ -18,6 +18,10 @@ const CoinInfo = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        if (!data[0]) {
+          setError(`No se encontró la moneda "${id}"`);
+          return;
+        }
         setCoinData(data[0]);
       })
       .catch((e) => {
